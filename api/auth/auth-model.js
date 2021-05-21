@@ -1,5 +1,10 @@
 const db = require('../../data/dbConfig')
 
+
+function getAll() {
+    return db('users')
+}
+
 function findBy(filter) {
     return db('users').where(filter).first()
 }
@@ -11,5 +16,6 @@ async function Add(data) { // done for you
 
   module.exports = {
       Add,
-      findBy
+      findBy,
+      getAll,
   }
